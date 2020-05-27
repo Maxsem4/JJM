@@ -1,3 +1,52 @@
 label, input, button {
     margin:  10px
 }
+
+
+.boxColor {
+    
+    background-color: #F3E392;
+    
+}
+
+.divColor {
+    background-color: #F39292;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+  }
+
+
+  body {
+    background-image: url(pictures/6.jpg);
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+.center {
+    text-align: center;
+}
+
+.amazing { 
+    border-color: black;
+}
+
+.bigFont {
+    font-size: 50px;
+}
+
