@@ -11,12 +11,11 @@
     <title>Document</title>
 </head>
 
-<body>
-    <br>
-    <br>
+<body class="w3-mobile">
 
-    <div class="w3-bar w3-light-grey w3-border w3-mobile">
-        <a href="index.html" class="w3-bar-item w3-button w3-green"><i class="fa fa-home"></i></a>
+
+    <div class="w3-bar boxColor w3-border w3-mobile">
+        <a href="index.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
         <a href="createCustomer.html" class="w3-bar-item w3-button">Create Customer</a>
         <a href="viewCustomers.html" class="w3-bar-item w3-button">View Customers</a>
         <a href="createSalesOrder.html" class="w3-bar-item w3-button">Create Sales Order</a>
@@ -24,53 +23,94 @@
         <a href="viewInvoices.html" class="w3-bar-item w3-button">View Invoices</a>
     </div>
 
-        <br>
-        <br>
+    <br>
+    <br>
 
-        <div class="w3-container w3-gray w3-margin-right w3-margin-left w3-margin-top w3-margin-bottom">
+    <div class="w3-container w3-margin-right w3-margin-left w3-margin-top w3-margin-bottom">
 
-            <div class="w3-container w3-mobile w3-cell-row w3-margin-bottom w3-mobile">
-                <div class="w3-cell w3-mobile" style="width:27.5%"></div>
-                <div class="w3-card w3-blue w3-cell w3-mobile" style="width:45%">
-                    <h2 class="w3-container">Welcome "PLACEHOLDER BUSINESS"</h2>
-                </div>
-                <div class="w3-cell w3-mobile" style="width:27.5%"></div>
+        <div class="w3-container w3-mobile w3-cell-row w3-margin-bottom w3-mobile">
+            <div class="w3-cell w3-mobile" style="width:27.5%"></div>
+            <div class="w3-card boxColor w3-cell w3-mobile boxColor" style="width:45%">
+                <h2 class="w3-container center">Welcome AMAZON</h2>
             </div>
-
-            <div class="w3-container w3-mobile w3-cell-row w3-margin-top w3-margin-bottom">
-                <div class="w3-card w3-cell w3-mobile w3-blue w3-container" style="width:35%">
-                    <h2 style="margin-top: 10px;">Local Weather</h2>
-                    <div class="w3-container">
-                        <ul>
-                            <li>Location:</li>
-                            <li>Temperature:</li>
-                            <li>Humidity:</li>
-                            <li>Weather:</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="w3-cell w3-mobile" style="width:15%">
-
-                </div>
-
-                <div class="w3-card w3-cell w3-mobile w3-blue w3-container" style="width:35%">
-                    <h2>Today's Date</h2>
-                    <div class="w3-container">
-                        <ul>
-                            <li>Month:</li>
-                            <li>Day:</li>
-                            <li>Year:</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <br>
-            
+            <div class="w3-cell w3-mobile" style="width:27.5%"></div>
         </div>
 
-        <script src="./js/index.js"></script>
+        <div class="w3-container w3-mobile w3-cell-row w3-margin-top w3-margin-bottom">
+            <div class="w3-card w3-cell w3-mobile boxColor w3-container" style="width:35%">
+                <h2 style="margin-top: 10px;">Local Weather</h2>
+                <div class="w3-container">
+                    <hr class="line">
+                    <ul>
+                        <li>Location: Ottawa</li>
+                        <li id="temperature">Temperature:</li>
+                        <li id="humidity">Humidity:</li>
+                        <li id="weather">Weather:</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w3-cell w3-mobile" style="width:15%">
+
+            </div>
+
+            <div class="w3-card w3-cell w3-mobile boxColor w3-container" style="width:35%">
+                <h2>Today's Date</h2>
+                <div class="w3-container">
+                    <h2 id="time" class="bigFont"></h2> 
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+
+
+    <div class="w3-container boxColor w3-mobile footer">
+        <p>All Rights Reserved</p>
+        <p>JJM Inc.</p>
+        <div class="logo">
+            <img src="css/pictures/logo3.png" alt="logo">
+        </div>
+    </div>
+
+
+
+    <script src="./js/index.js"></script>
+    <script>
+        fetch('http://api.weatherstack.com/current?access_key=b179bc5630fdbc1128363252f9444882&query=ottawa')
+            .then(function (response) {
+                return response.json()
+
+            })
+            .then(function (data) {
+
+                console.log(data)
+                console.log(data.current.temperature)
+                console.log(data.current.humidity)
+                console.log(data.current.weather_descriptions[0])
+                let currentTemp = document.getElementById('temperature')
+                currentTemp.textContent = "Temperature: " + data.current.temperature + "°"
+
+                let currentHumid = document.getElementById('humidity')
+                currentHumid.textContent = "Humidity: " + data.current.humidity + "%"
+
+                let weatherDesc = document.getElementById('weather')
+                weatherDesc.textContent = "Weather: " + data.current.weather_descriptions[0]
+
+
+            })
+
+
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            console.log(date)
+
+            let  theTime = document.getElementById('time')
+            theTime.textContent=date
+
+    </script>
 </body>
 
 </html>

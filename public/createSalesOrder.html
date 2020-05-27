@@ -13,29 +13,41 @@
 
 <body>
 
-    <div class="w3-bar w3-light-grey w3-border w3-mobile">
-        <a href="index.html" class="w3-bar-item w3-button w3-green"><i class="fa fa-home"></i></a>
+    <div class="w3-bar boxColor w3-border w3-mobile">
+        <a href="index.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
         <a href="createCustomer.html" class="w3-bar-item w3-button">Create Customer</a>
         <a href="viewCustomers.html" class="w3-bar-item w3-button">View Customers</a>
         <a href="createSalesOrder.html" class="w3-bar-item w3-button">Create Sales Order</a>
         <a href="viewSalesOrders.html" class="w3-bar-item w3-button">View Sales Orders</a>
         <a href="viewInvoices.html" class="w3-bar-item w3-button">View Invoices</a>
     </div>
+<br>
+<br>
+<br>
+<br>
 
-
-    <div class="w3-container w3-gray w3-margin-right w3-margin-left w3-margin-top w3-margin-bottom">
+    <div class="w3-container boxColor w3-margin-right w3-margin-left w3-margin-top w3-margin-bottom">
         <div class="w3-container w3-mobile w3-cell-row w3-margin-top w3-margin-bottom">
             <h3>Create Sales Order</h3>
             <form class="w3-container">
 
-                <label class="w3-text-black" id="customerName"><b>Customer Name (change to dropdown)</b></label>
-                <input class="w3-input w3-border" type="text">
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black">Select Customer</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                      <a href="#" class="w3-bar-item w3-button">Bob Barker</a>
+                      <a href="#" class="w3-bar-item w3-button">Andy Dick</a>
+                      <a href="#" class="w3-bar-item w3-button">Andy Kaufman</a>
+                    </div>
+                  </div>
+                  <br>
+                <label class="w3-text-black" ><b>Customer Name:</b></label>
+                <input class="w3-input w3-border" id="customerName" type="text">
 
-                <label class="w3-text-black" id="customerAddress"><b>Description:</b></label>
-                <input class="w3-input w3-border" type="text">
+                <label class="w3-text-black"><b>Description:</b></label>
+                <input class="w3-input w3-border" id="customerAddress" type="text">
 
-                <label class="w3-text-black" id="customerPhoneNumber"><b>Amount Due:</b></label>
-                <input class="w3-input w3-border" type="text">
+                <label class="w3-text-black" ><b>Amount Due:</b></label>
+                <input class="w3-input w3-border" id="customerPhoneNumber" type="text">
 
                 <button class="w3-btn w3-black" id="createBtn">Create</button>
 
@@ -44,7 +56,16 @@
     </div>
 
 
-    <script src="./js/viewSalesOrders.js"></script>
+    <div class="w3-container boxColor w3-mobile footer">
+        <p>All Rights Reserved</p>
+        <p>JJM Inc.</p>
+        <div class="logo">
+            <img src="css/pictures/logo3.png" alt="logo">
+        </div>
+    </div>
+
+
+    <script src="./js/createSalesOrder.js"></script>
 </body>
 
 </html>
