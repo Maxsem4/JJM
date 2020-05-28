@@ -50,3 +50,13 @@ hr {
     font-size: 50px;
 }
 
+.listStyle {
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.pay-button {
+    border-radius: 10px;
+    background-color: lightgreen;
+}
