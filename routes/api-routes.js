@@ -76,9 +76,20 @@ router.post("/orders", async function(req, res) {
   res.json(dbOrders);
 });
 
-router.post("/invoice", async function(req, res) {
-  const dbInvoice = await Invoice.create(req.body);
-  res.json(dbInvoice);
+router.put("/orders/pay/:id", async function(req, res) {
+  const orderId = req.params.id
+  const order = await Order.findOne({where: {id: orderId}})
+  order['order_id']= orderId
+  order['amount_paid']= order['amount_due']
+  const dbInvoices = await Invoice.create(order);
+  Order.destroy({ where: { id: orderId } }).then(function(dbOrder) {
+  });
+  res.json(dbInvoices);
+});
+
+router.post("/invoices", async function(req, res) {
+  const dbInvoices = await Invoice.create(req.body);
+  res.json(dbInvoices);
 });
 
 router.delete("/customers/:id", function(req, res) {
