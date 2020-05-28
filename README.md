@@ -58,6 +58,8 @@ No tests were used in this application
 
 ## Gif of Working Application
 
+![](/public/css/gifs/JJM_gif.gif)
+
 ## Link to Working Application
 
 ## Link to Presentation
