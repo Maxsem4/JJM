@@ -35,16 +35,22 @@ WeatherStack API (NEW) : https://weatherstack.com
 ### This Application Was Also Developed With
 
 HTML5/CSS/Javascript
+
 NodeJs
+
 Express Web Framework
+
 Sequelize ORM
 
 ## Dependencies
 
-The following dependencies were used in production of this application :
-  express : https://expressjs.com/,
-  mysql2 : https://www.npmjs.com/package/mysql2,
-  sequelize : https://sequelize.org/v5/
+The following dependencies were used in production of this application : 
+
+express : https://expressjs.com/,
+
+mysql2 : https://www.npmjs.com/package/mysql2,
+
+sequelize : https://sequelize.org/v5/
   
 ## Tests 
 
